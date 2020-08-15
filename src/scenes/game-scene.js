@@ -202,11 +202,11 @@ class GameScene extends Phaser.Scene {
                 player.body.setVelocityY(this.playerVelocity); 
                 this.sound.play('power');
             }
-            else if(score >= 90 && score < 250) {    
+            else if(score >= 90 && score < 110) {    
                 player.body.setVelocityY(-320); 
                 this.sound.play('power');
             }
-            else if(score >= 220) {      
+            else if(score >= 110) {      
                 player.body.setVelocityY(-400); 
                 this.sound.play('jumping');
             }            
