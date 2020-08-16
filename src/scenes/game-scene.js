@@ -48,7 +48,11 @@ class GameScene extends Phaser.Scene {
     }
     
     create () {       
-       
+        
+        // set background color, so the sky is not black    
+        //this.cameras.main.setBackgroundColor('#2889d4');
+        this.add.image(0, 0, 'sky').setOrigin(0).setScale(8);
+        
         platforms = this.physics.add.staticGroup();
         //  Here we create the ground.
         platforms.create(width/2, height - 33 , 'ground2');
@@ -59,9 +63,7 @@ class GameScene extends Phaser.Scene {
         platforms.create((width/2) + 190, (height/2) - 70, 'ground5');
         platforms.create(width - 105,  200, 'ground6');
 
-        // set background color, so the sky is not black    
-        //this.cameras.main.setBackgroundColor('#2889d4');
-        this.add.image(0, 0, 'sky').setOrigin(0).setScale(8);
+
 
         this.physics.world.bounds.width = width;
         this.physics.world.bounds.height = height;
