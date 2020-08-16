@@ -51,7 +51,7 @@ class GameScene extends Phaser.Scene {
         
         // set background color, so the sky is not black    
         //this.cameras.main.setBackgroundColor('#2889d4');
-        this.add.image(0, 0, 'sky').setOrigin(0).setScale(8);
+        this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
         
         platforms = this.physics.add.staticGroup();
         //  Here we create the ground.
