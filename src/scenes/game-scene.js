@@ -32,7 +32,7 @@ class GameScene extends Phaser.Scene {
         this.load.image('ground6', './assets/platform6.png');
         this.load.image('star', './assets/star.png');
         this.load.image('bomb', './assets/bomb.png');
-        this.load.image('sky', './assets/sky.png');
+        this.load.image('sky', './assets/background_01.png');
 
         // player animations
         this.load.atlas('player', './assets/player2.png', './assets/player3.json');
