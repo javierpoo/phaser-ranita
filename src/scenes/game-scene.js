@@ -32,6 +32,7 @@ class GameScene extends Phaser.Scene {
         this.load.image('ground6', './assets/platform6.png');
         this.load.image('star', './assets/star.png');
         this.load.image('bomb', './assets/bomb.png');
+        this.load.image('sky', './assets/sky.png');
 
         // player animations
         this.load.atlas('player', './assets/player2.png', './assets/player3.json');
@@ -59,7 +60,9 @@ class GameScene extends Phaser.Scene {
         platforms.create(width - 105,  200, 'ground6');
 
         // set background color, so the sky is not black    
-        this.cameras.main.setBackgroundColor('#2889d4');
+        //this.cameras.main.setBackgroundColor('#2889d4');
+        this.add.image(0, 0, 'sky').setOrigin(0).setScale(8);
+
         this.physics.world.bounds.width = width;
         this.physics.world.bounds.height = height;
 
