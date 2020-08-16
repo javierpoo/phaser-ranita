@@ -203,6 +203,8 @@ class GameScene extends Phaser.Scene {
             //     score -= 10; // Engergy descreases for every jump
             //     scoreText.setText('Energy: ' + score);
             // }
+            console.log(this);
+            
             console.log(this.playerVelocity);
             // Done: increase velocity based on velocity value
             if(score < 90) {
