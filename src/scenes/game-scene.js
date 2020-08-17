@@ -52,10 +52,10 @@ class GameScene extends Phaser.Scene {
         // set background color, so the sky is not black    
         //this.cameras.main.setBackgroundColor('#2889d4');
 
-        //var background = this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
+        var background = this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
         //background.events.onInputDown.add(listener, this);
 
-        this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
+        //this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
         
         platforms = this.physics.add.staticGroup();
         //  Here we create the ground.
@@ -174,7 +174,7 @@ class GameScene extends Phaser.Scene {
         // make the camera follow the player
         this.cameras.main.startFollow(player, true);
         
-        this.button.on('pointerdown', function(){
+        this.background.on('pointerdown', function(){
             //do things on click
             player.body.setVelocityY(-450); 
         });
