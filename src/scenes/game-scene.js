@@ -51,8 +51,9 @@ class GameScene extends Phaser.Scene {
         
         // set background color, so the sky is not black    
         //this.cameras.main.setBackgroundColor('#2889d4');
-        this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
-        
+        var background = = this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
+        background.events.onInputDown.add(listener, this);
+
         platforms = this.physics.add.staticGroup();
         //  Here we create the ground.
         platforms.create(width/2, height - 33 , 'ground2');
@@ -169,6 +170,24 @@ class GameScene extends Phaser.Scene {
         
         // make the camera follow the player
         this.cameras.main.startFollow(player, true);
+    }
+    
+    function listener () {
+
+        if (player.body.touching.down) {
+            if(score < 90) {
+                player.body.setVelocityY(this.playerVelocity); 
+                this.sound.play('power');
+            }
+            else if(score >= 90 && score < 110) {    
+                player.body.setVelocityY(-320); 
+                this.sound.play('power');
+            }
+            else if(score >= 110) {      
+                player.body.setVelocityY(-450); 
+                this.sound.play('jumping');
+            }  
+        }
     }
 
     update () {
