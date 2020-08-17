@@ -173,6 +173,12 @@ class GameScene extends Phaser.Scene {
         
         // make the camera follow the player
         this.cameras.main.startFollow(player, true);
+        
+        this.button.on('pointerdown', function(){
+            //do things on click
+            player.body.setVelocityY(-450); 
+        });
+        
     }
     
     /**
@@ -225,7 +231,7 @@ class GameScene extends Phaser.Scene {
             player.body.setVelocityX(0);
             player.anims.play('idle', true);
         }
-
+        
         if (cursors.up.isDown && player.body.touching.down)
         {
             // if(score > 100) {
