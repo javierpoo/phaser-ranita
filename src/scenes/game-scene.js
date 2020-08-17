@@ -172,7 +172,7 @@ class GameScene extends Phaser.Scene {
         this.cameras.main.startFollow(player, true);
     }
     
-    function listener () {
+    listener () {
 
         if (player.body.touching.down) {
             if(score < 90) {
