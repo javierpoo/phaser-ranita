@@ -52,7 +52,7 @@ class GameScene extends Phaser.Scene {
         // set background color, so the sky is not black    
         //this.cameras.main.setBackgroundColor('#2889d4');
 
-        var background = this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
+        this.background = this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
         //background.events.onInputDown.add(listener, this);
 
         //this.add.image(0, 0, 'sky').setOrigin(0).setScale(1);
