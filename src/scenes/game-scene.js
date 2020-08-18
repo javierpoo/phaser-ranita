@@ -23,7 +23,7 @@ let gameText, music;
 class GameScene extends Phaser.Scene {
     constructor() {
         super({ key: 'GameScene' });
-        this.playerVelocity =  -250;
+        this.playerVelocity =  -300;
     }
    
     preload () {
