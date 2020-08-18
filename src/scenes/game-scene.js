@@ -14,6 +14,7 @@ let food;
 let bombs;
 let platforms;
 let cursors;
+let pointer;
 let score = 0;
 let gameOver = false;
 let scoreText, gameOverText;
@@ -112,7 +113,9 @@ class GameScene extends Phaser.Scene {
 
         // Input Events
         cursors = this.input.keyboard.createCursorKeys();
+        pointer = this.input.activePointer;
 
+        
         food = this.physics.add.group();
         food.create(35, 100, 'food', 'sprite1');
         food.create(135, 135, 'food', 'sprite2');
@@ -176,12 +179,7 @@ class GameScene extends Phaser.Scene {
         
         // make the camera follow the player
         this.cameras.main.startFollow(player, true);
-        
-        this.background.on('pointerdown', function(){
-            //do things on click
-            player.body.setVelocityY(-450); 
-        });
-        
+    
     }
     
     /**
@@ -235,7 +233,7 @@ class GameScene extends Phaser.Scene {
             player.anims.play('idle', true);
         }
         
-        if (cursors.up.isDown && player.body.touching.down)
+        if ((cursors.up.isDown || pointer.isDown) && player.body.touching.down)
         {
             // if(score > 100) {
             //     score -= 10; // Engergy descreases for every jump
