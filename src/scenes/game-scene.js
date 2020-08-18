@@ -1,7 +1,10 @@
 import Phaser from 'phaser';
 
-const width = window.innerWidth < 1300 ? 1325: window.innerWidth;
-const height = window.innerHeight;
+//const width = window.innerWidth < 1300 ? 1325: window.innerWidth;
+//const height = window.innerHeight;
+
+const width = 800;
+const height = 600;
 // set container height
 document.querySelector("#canvas-container").style.height = height+'px';
 
